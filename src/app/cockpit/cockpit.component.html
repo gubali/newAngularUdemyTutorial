@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-md-6">
+    <p>Add server or blue print</p>
+    <label>Server Name</label>
+    <input type="text" class="form-control" [(ngModel)]="serverName" />
+    <label>Server Content</label>
+    <input type="text" class="form-control" [(ngModel)]="serverContent" #serverContentControls />
+    <div class="btn-group" style="margin: 15px 0;">
+      <button class="btn btn-success" (click)="onAddServer()">Add Server</button>&nbsp;&nbsp;
+      <button class="btn btn-primary" (click)="onAddBulePrintServer()">Add Server BluePrint</button>
+      <button class="btn btn-dark" (click)="localRefrenceControls(serverContentControls)">Local Rfrnce </button>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <p>Add Input form from Child and show data in Parent Component</p>
+    <label>Item Name: </label>
+    <input type="text" class="form-control" [(ngModel)]="itemName" />
+    <label>Total</label>
+    <input type="text" class="form-control" [(ngModel)]="totalCount" />
+    <div class="btn-group" style="margin: 15px 0;">
+      <button class="btn btn-dark" (click)="getAlert()">Add Server BluePrint</button>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <h4>view Child Example</h4>
+    <input type="text" class="form-control" #firstName />
+    <button class="btn btn-dark" (click)="fnViewChild()">View Child</button>
+  </div>
+</div>

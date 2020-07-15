@@ -1,0 +1,51 @@
+<app-header></app-header>
+<app-hero-banner></app-hero-banner>
+<div class="container">
+    <div class="project__recepies">
+        <app-recipes></app-recipes>
+        <app-shopping-list></app-shopping-list>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-danger">{{title}}</div>
+            <!-- <div app-server></div> -->
+            <div class="app-server"></div>
+            <app-server></app-server>
+            <!--testing-->
+            <ul *ngFor="let item of courceName">
+                <li><label>College Name: </label> <span [ngClass]="getColorTextBaseOnTheCource(item)">{{item.collegeName}}</span> ---
+                    CourceName: <span [ngClass]="getColorTextBaseOnTheCource(item)">{{item.courceName}}</span></li>
+            </ul>
+            <!--end-->
+            <button class="btn btn-danger" [disabled]="!enableButton" (click)="onClickEvent()">Server Offline</button>
+            <p [innerText]="enableButton"></p>
+            <p>{{serverStatus}}</p>
+            <br />
+            <input type="text" class="form-control" (input)="getServerName($event)" />
+            <p [ngStyle]="{'color': 2%2 == 0 ? 'red' : 'black'}">Welcome!</p>
+            <p appHoverColor>Custom directive Hover</p>
+            Text Input values: {{serverName}}
+            <h3>Two way binding</h3>
+            <strong>Excercise: Angular</strong>
+            <input type="text" class="form-control" [(ngModel)]="name">
+            Name: {{name}} <br />
+            <button class="btn btn-success" (click)="resetTwoWayBinding()"
+                [disabled]="disableButtonIfEmptyString()">Reset 2 Way</button>
+            <h3>Directive</h3>
+            <p *ngIf="isServerActive, else noServer">Server is Active!</p>
+            <ng-template #noServer>
+                <p>Server is not Active</p>
+            </ng-template>
+            <h4 class="text-success">Assignment 3: Practicing Directives</h4>
+            <button class="btn btn-success" (click)="toggleFunciton()">Dispaly Details</button>
+            <p class="text-danger" *ngIf="toggleAction">Secret Password</p>
+            <p *ngFor="let item of log; index as i; let last = last"
+             [ngStyle]="{'color': i%2 == 0 ? 'red' : 'black'}" (click)="removeItems(i)">
+                {{item}}</p>
+        </div>
+        <div class="clearfix"></div>
+      <app-life-cycle-hook></app-life-cycle-hook>
+    </div>
+
+</div>

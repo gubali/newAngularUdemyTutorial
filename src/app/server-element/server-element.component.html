@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        {{element.name}}
+      </div>
+      <div class="panel-body">
+        <p>
+          <strong *ngIf="element.type === 'server'" style="color: red;">
+            {{element.content}}
+          </strong>
+        </p>
+        <em *ngIf="element.type === 'blueprint'" style="color: green;"> {{element.content}}</em>
+        <!-- <ng-content>
+          <span>Im ng-content</span>
+        </ng-content> -->
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<div style="border: 1px dashed red;padding:20PX; margin: 20PX 0;">
+  <strong>Server component</strong>
+  <p [ngStyle]="{'backgroundColor': getColor()}" [ngClass]="{'text-light': serverStatus === 'online'}">Server Status
+    is {{serverStatus}}</p>
+  <hr />
+  <h4 class="text-danger text-center">Input and Output decoartor Concepts</h4>
+  <app-cockpit (serverCreated)="onServerAdded($event)" (bluePrintCreated)="onBlueprintAdded($event)"
+    (getAlertBoxFromChild)="childRecvdData($event)"></app-cockpit>
+  <div class="row">
+    <div class="col-md-6">
+      <app-server-element *ngFor="let serverElement of serverElements" [srvElement]="serverElement">
+      </app-server-element>
+    </div>
+    <div class="col-md-6">
+      <em class="text-success">Below array of items loops from child to parent</em>
+      <table class="table" *ngIf="childDataArray.length >  0">
+        <thead>
+          <tr>
+            <th>Items Name</th>
+            <th>Total</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of childDataArray" [ngClass]="applyTableRowColorClass(item)">
+            <td>{{item.itemName}}</td>
+            <td>{{item.total}}</td>
+            <td><a href="#" style="color: yellowgreen;">Edit</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+</div>
