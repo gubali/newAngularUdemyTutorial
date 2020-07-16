@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit, ContentChild, ElementRef, AfterContentInit } from "@angular/core";
 @Component({
   //  selector: "[app-server]", // selector usinf directive
   selector: "app-server",
@@ -6,11 +6,21 @@ import { Component } from "@angular/core";
   styleUrls: ["./server.component.css"]
 })
 
-export class ServerComponent {
+export class ServerComponent implements OnInit, AfterContentInit {
   public serverStatus: string = "online";
   // serverElements = [{ type: "blueprint", name: "test server", content: "Server is working" }];
   childDataArray: Array<{ itemName: string, total: number }> = [];
   serverElements = [];
+  @ContentChild('imAppComponent', { static: false }) localContentRef: ElementRef
+
+  constructor() { }
+  ngOnInit() {
+
+  }
+  ngAfterContentInit() {
+   console.log("Viwe coontent init" + this.localContentRef);
+   
+  }
   getColor() {
     return this.serverStatus === 'online' ? 'green' : 'red'
   }

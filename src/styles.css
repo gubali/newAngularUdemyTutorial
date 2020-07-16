@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+.common-border-style{
+    border:2px dashed #5d5d5d; 
+    padding: 20px; 
+    margin: 15px 0;
+}
+
+em{
+    font-size: 10px;
+}

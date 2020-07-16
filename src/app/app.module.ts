@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { ServerComponent } from './server/server.component';
-import { ServersComponent } from './servers/servers.component';
 import { StudentsComponent } from "./studentDetails/students.component";
 import { HoverColorDirective } from './commonDirective/hover-color.directive';
 import {FormsModule} from '@angular/forms';
@@ -17,13 +16,13 @@ import { HeroBannerComponent } from './hero-banner/hero-banner.component';
 import { CockpitComponent } from './cockpit/cockpit.component';
 import { ServerElementComponent } from './server-element/server-element.component';
 import { LifeCycleHookComponent } from './life-cycle-hook/life-cycle-hook.component';
+import { NgtemplateandcontentComponent } from './ngtemplateandcontent/ngtemplateandcontent.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ServerComponent,
-    ServersComponent,
     StudentsComponent,
     HoverColorDirective,
     HeaderComponent,
@@ -36,7 +35,8 @@ import { LifeCycleHookComponent } from './life-cycle-hook/life-cycle-hook.compon
     HeroBannerComponent,
     CockpitComponent,
     ServerElementComponent,
-    LifeCycleHookComponent
+    LifeCycleHookComponent,
+    NgtemplateandcontentComponent
   ],
   imports: [
     BrowserModule,

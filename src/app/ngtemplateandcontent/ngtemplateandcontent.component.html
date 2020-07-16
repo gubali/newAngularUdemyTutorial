@@ -1,0 +1,20 @@
+<div class="common-border-style">
+    <p class="text-danger text-center">ng-template & ng-content Example</p>
+    <em class="text-success">below is normal style for if condiotn is you want show and hide items based on the boolean
+        value</em>
+    <div *ngIf="isOn" class="text-dark">Hello world</div>
+    <em class="text-danger">new style using ng-template same as above output</em>
+    <ng-template [ngIf]="isOn">
+        <div class="text-success">using ng-template: Hello world</div>
+    </ng-template>
+
+    <em>without ng-container example</em>
+    <div *ngFor="let item of country">
+        <div *ngIf="item.id">{{item.name}}</div>
+    </div>
+    <em>with ng-container </em>
+    <ng-container *ngFor="let item of country">
+        <div *ngIf="item.id" class="text-success">{{item.name}}</div>
+    </ng-container>
+
+</div>
