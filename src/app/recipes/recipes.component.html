@@ -1,10 +1,14 @@
 <div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <app-recipes-list></app-recipes-list>
-        </div>
-        <div class="col-md-6">
-            <app-recipes-details></app-recipes-details>
-        </div>
+  <div class="row">
+    <div class="col-md-6">
+      recipi component:
+      <app-recipes-list (recipiWasSelected)="selectedRecipi === $event"></app-recipes-list>
     </div>
+    <div class="col-md-6">
+      <app-recipes-details *ngIf="selectedRecipi; else infoText" [selectedRecipiDetails]="selectedRecipi"></app-recipes-details>
+      <ng-template #infoText>
+        <p>Please select a Recipie!</p>
+      </ng-template>
+    </div>
+  </div>
 </div>

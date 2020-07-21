@@ -1,0 +1,141 @@
+/***********
+
+Point to be rembsered:
+
+git init .
+git config --global user.name <yourGitHubAccount>
+git config --global user.email <yourGitHubEmailAccount>
+git add .
+
+git status
+# edit .gitignore to ignore folder you don't want
+
+git commit -m "first commit"
+git remote add origin https://github.com/<yourGitHubAccount>/<yourRepo.git>
+git push -u origin master
+
+ig got error: 
+
+
+git push origin master --force
+
+  [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/gubali/newAngularUdemyTutorial.git':: git push origin master --force
+
+syntax of creating component: ng g c user-dertails like that ("a-b")
+
+====end===========================
+
+
+if you apply rebase want to revert chnage:
+ 1) git reflog
+ 2) git reset --hard "HEAD@{1}" //"last_d"
+ 3) git rebase --abort
+
+
+***************/
+*: need to work on this
+
+
+ng new my_new_project
+
+
+data binding: communication
+
+typescript => template(HTML)
+
+typeof communication
+
+string interpolation: {{}}
+property binding: [propert]:"data"
+event: (click)="expression"
+
+=====Directive================
+Directive are instruction in the DOM
+
+sytax of declaring array:  Array<{ itemName: string, total: number }> = []  //empty array will return of what data type
+
+view encapsulation :) 
+
+shadow dom : not leak style outside of component
+
+ViewChild:)
+
+The ViewChild decorator is used to gain access to a child component, found in the template, so that you can access its properties and methods.
+
+Use { static: true } when you want to access the ViewChild in ngOnInit.
+Use { static: false } will be accessible only in ngAfterViewInit. 
+
+LifeCycle Hook:
+
+1) ngOnchanges**: called after a bound input property changes
+2) ngOnInit: Called once the component is initialized
+3) ngDocheck: called every change detection run
+4) ngAfterContentInit: called after content(ng-content) has been projected into view.
+5) ngAfterContentChecked: called every time the projected content has been checked.
+6) ngAfterViewInit: called after component view(child view) has been initialized
+7) ngAfterViewChecked: called every time view (child view) have been checked.
+8) ngOnDestroy: called once the component is about to be destroyed.
+
+ngAfterContentInit : This is called after components external content has been initialized.
+
+ngAfterViewInit : This is called after the component view and its child views has been initialized.
+
+ElemRef:)
+
+ A class that wraps native DOM elements in the browser and allows you to work with the DOM by providing the nativeElement object
+ which exposes all the methods and properties of the native elements.
+ 
+ 
+ <ng-template>::) <ng-template> is a template element that Angular uses with structural directives 
+ (*ngIf, *ngFor, [ngSwitch] and custom directives). only property "like" [ngIf]
+ 
+ <ng-container> :) 
+ The Angular <ng-container> is a grouping element that doesn't interfere with styles or layout because Angular doesn't put it in the DOM.
+ 
+ <ng-content> **:)
+ They are used to create configurable components. This means the components can be configured depending on the needs of its user.
+ This is well known as Content Projection.
+ 
+ Assignment:)
+ 
+ The setInterval() method calls a function or evaluates an expression at specified intervals (in milliseconds).
+ The clearInterval() method clears a timer set with the setInterval() method
+ 
+ 89: add values usig view child as well and also with [(ngModel)]="anyName".
+ 
+ exp: @ViewChild('#refernceVariableName') nameInputRef: ElemRef;
+ 
+ Directive::
+ 
+ Attribute directive: normal html + chnage element they are added.
+ Structural: affect whole dom area add/remove.
+ 
+Creating a Basic Attribute Directive:) 
+
+Rnderer2: The Renderer2 class is an abstraction provided by Angular in the form of a service that allows to manipulate 
+elements of your app without having to touch the DOM directly. 
+
+
+HostListener:) 
+
+@HostListener is Angular’s decorator method that’s used for listening to DOM events on the host element of both component and attribute directives.
+
+@HostListener sets the listeners once the directive is initialized and removes them automatically once the directive gets destroyed.
+
+@HostListener catches and listens to events from children or nested elements when they bubble up to the host element. Moreover, you can listen to 
+events on global elements, but you should do so sparingly for performance reasons.
+
+@HostBindig:)
+
+
+HostBinding('value') myValue; is exactly the same as [value]="myValue"
+
+HostListener('click') myClick(){ } is exactly the same as (click)="myClick()"
+
+@HostBinding: This decorator binds a class property to a property of the host element.
+@HostListener: This decorator binds a class method to an event of the host element.
+ 
+ 
+ 
+

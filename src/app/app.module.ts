@@ -17,6 +17,14 @@ import { CockpitComponent } from './cockpit/cockpit.component';
 import { ServerElementComponent } from './server-element/server-element.component';
 import { LifeCycleHookComponent } from './life-cycle-hook/life-cycle-hook.component';
 import { NgtemplateandcontentComponent } from './ngtemplateandcontent/ngtemplateandcontent.component';
+import { GamecontrolComponent } from './82practising/gamecontrol/gamecontrol.component';
+import { OddcontrolComponent } from './82practising/oddcontrol/oddcontrol.component';
+import { EvencontrolComponent } from './82practising/evencontrol/evencontrol.component';
+import { DirectiveDeepDiveComponent } from './directive-deep-dive/directive-deep-dive.component';
+import { BasicHighlightDiretcive } from './custom-directive/basic-highlight-directive';
+import { BetterHighlightDirective } from './custom-directive/better-highlight.directive';
+import { CustomStructureDirectiveDirective } from './custom-directive/custom-structure-directive.directive';
+import { DropdownDirective } from './shared/dropdown.directive';
 
 
 @NgModule({
@@ -36,7 +44,15 @@ import { NgtemplateandcontentComponent } from './ngtemplateandcontent/ngtemplate
     CockpitComponent,
     ServerElementComponent,
     LifeCycleHookComponent,
-    NgtemplateandcontentComponent
+    NgtemplateandcontentComponent,
+    GamecontrolComponent,
+    OddcontrolComponent,
+    EvencontrolComponent,
+    DirectiveDeepDiveComponent,
+    BasicHighlightDiretcive,
+    BetterHighlightDirective,
+    CustomStructureDirectiveDirective,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,

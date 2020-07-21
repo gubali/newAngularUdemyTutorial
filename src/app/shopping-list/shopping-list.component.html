@@ -1,11 +1,13 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <app-shopping-edit></app-shopping-edit>
+            <app-shopping-edit (createRecipiItems)="addedShoppingListItems($event)"></app-shopping-edit>
             <hr />
+            <em>above is recipe list</em>
             <ul class="list-group">
                 <a href="" class="list-group-item" style="cursor: pointer;" *ngFor="let item of ingredients">
                     {{item.name}} ({{item.amount}})
+                  <div class="text-success">  <em>{{item.name}}</em></div>
                 </a>
             </ul>
         </div>

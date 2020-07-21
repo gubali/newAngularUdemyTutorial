@@ -1,12 +1,12 @@
 <div class="row">
     <div class="col-xs-12">
-        <img src="" class="img-responsive" />
+        <img [src]="selectedRecipiDetails.imagePath" class="img-responsive" />
     </div>
 </div>
 <div class="row">
     <div class="col-xs-12">
         <h2 class="text-succes">
-            Recipe Name
+            {{selectedRecipiDetails.name}}
         </h2>
     </div>
 </div>
@@ -32,7 +32,7 @@
 </div>
 <div class="row">
     <div class="col-xs-12">
-        Description
+        {{selectedRecipiDetails.description}}
     </div>
 </div>
 <div class="row">

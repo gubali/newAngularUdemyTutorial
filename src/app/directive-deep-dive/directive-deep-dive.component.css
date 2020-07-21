@@ -1,0 +1,14 @@
+.even{
+    background-color: green;
+    color: #fff;
+}
+.odd{
+    background-color: #EE3135;
+    color: #fff;
+}
+
+.text-color{
+    color: #fff;
+    padding: 5px;
+    background-color: royalblue;
+}

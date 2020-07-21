@@ -8,10 +8,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
   public enableButton = false
   public disableButton: boolean;
-  public toggleAction:boolean = false;
+  public toggleAction: boolean = false;
   public log = [];
-  public lengthItems:number;
-
+  public lengthItems: number;
+  public evenNumbers: Array<number> = [];
+  public oddNumbers: Array<number> = [];
+  public headerNavigationName = "recipes";
   public courceName = [{
     collegeName: "NIET",
     courceName: "B.Tech"
@@ -53,24 +55,35 @@ export class AppComponent {
       return false
     }
   }
-  getColorTextBaseOnTheCource(data){
-  if (data.courceName === 'B.Tech') {
-    return 'text-primary'
-  } else if(data.courceName === 'M.Tech') {
-    return 'text-success'
-  }
-  else{
-    return 'text-danger'
-  }
+  getColorTextBaseOnTheCource(data) {
+    if (data.courceName === 'B.Tech') {
+      return 'text-primary'
+    } else if (data.courceName === 'M.Tech') {
+      return 'text-success'
+    }
+    else {
+      return 'text-danger'
+    }
   }
 
-  toggleFunciton(){
+  toggleFunciton() {
     this.toggleAction = !this.toggleAction;
     this.lengthItems = this.log.length + 1
     this.log.push(new Date());
   }
-  removeItems(id:number){
-  const postion = id+1;
-  this.log.splice(postion, 1)
+  removeItems(id: number) {
+    const postion = id + 1;
+    this.log.splice(postion, 1)
+  }
+  getEvenOddNumber(number: number) {
+    if (number % 2 === 0) {
+      this.evenNumbers.push(number)
+    } else {
+      this.oddNumbers.push(number);
+    }
+  }
+  navigateElement(seletedNavigateName: string){
+    this.headerNavigationName = seletedNavigateName;
+    
   }
 }

@@ -1,9 +1,9 @@
-<app-header></app-header>
+<app-header (selectedFeatureName)="navigateElement($event)" [activeNavigationTab]="headerNavigationName"></app-header>
 <app-hero-banner></app-hero-banner>
 <div class="container">
-  <div class="project__recepies">
-    <app-recipes></app-recipes>
-    <app-shopping-list></app-shopping-list>
+  <div class="project__recepies common-border-style">
+    <app-recipes *ngIf="headerNavigationName === 'recipes'"></app-recipes>
+    <app-shopping-list *ngIf="headerNavigationName !== 'recipes'"></app-shopping-list>
   </div>
   <br />
   <div class="row">
@@ -48,5 +48,15 @@
     <div class="clearfix"></div>
     <app-life-cycle-hook></app-life-cycle-hook>
   </div>
- <app-ngtemplateandcontent></app-ngtemplateandcontent>
+  <app-ngtemplateandcontent></app-ngtemplateandcontent>
+  <div class="clearfix"></div>
+  <div class="common-border-style">
+    <h4 class="text-success text-center">Assignment 4: Practicing Property & Event Binding and View Encapsulation</h4>
+    <app-gamecontrol (newNumber)=getEvenOddNumber($event)></app-gamecontrol>
+    <app-evencontrol *ngFor="let evenNumber of evenNumbers" [evenNumber]="evenNumber"></app-evencontrol>
+    <app-oddcontrol *ngFor="let oddNumber of oddNumbers" [oddNumber]="oddNumber"></app-oddcontrol>
+  </div>
+  <div class="common-border-style">
+    <app-directive-deep-dive></app-directive-deep-dive>
+  </div>
 </div>

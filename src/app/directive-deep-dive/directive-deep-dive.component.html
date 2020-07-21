@@ -1,0 +1,45 @@
+<div class="row">
+    <div class="col-md-6">
+        <button class="btn btn-success" style="margin-bottom: 10px;" (click)="toggleButton =!toggleButton">Show Only Odd
+            number</button>
+        <ul class="list-group">
+            <div *ngIf="toggleButton">
+                <li class="list-group-item" *ngFor="let even of even" [ngClass]="{'even': even % 2 ===0}"
+                    [ngStyle]="{'font-size': even % 2 === 0 ? '21px' : 'none'}">
+                    {{even}}
+                </li>
+            </div>
+            <div *ngIf="!toggleButton">
+                <li class="list-group-item" *ngFor="let odd of odd" [ngClass]="{'odd': even % 2 !==0}">
+                    {{odd}}
+                </li>
+            </div>
+        </ul>
+        <p appBasicHighlight>Basic highlight Directive</p>
+        <p appBetterHighlight [defaultTextColor]="'yellow'" [defualtBgColor]="'black'"> Rendere 2 Approach directive</p>
+        <hr />
+        <!--ng-template with for loop-->
+        <ng-template ngFor let-item [ngForOf]="odd">
+            {{item}}
+        </ng-template>
+        <em class="text-danger">Custome: structural directive</em>
+        <div *appCustomStructureDirective="toggleButton">
+            <li class="list-group-item" *ngFor="let odd of odd" [ngClass]="{'odd': even % 2 !==0}">
+                {{odd}}
+            </li>
+        </div>
+        <em class="text-danger">ng Swtch Example</em>
+        <div  [ngSwitch]="value">
+            <p *ngSwitchCase="5">
+                Values is 5
+            </p>
+            <p *ngSwitchCase="10" [ngStyle]="{'color': value === 10 ? 'red': ''}">
+                values is 10
+            </p>
+            <p *ngSwitchDefault>
+                Value is Default
+            </p>
+        </div>
+    </div>
+
+</div>
