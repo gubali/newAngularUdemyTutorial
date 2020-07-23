@@ -1,0 +1,20 @@
+<table class="table table-striped table-condensed" *ngIf="rcvdInputDataOfCreateAccount.length > 0">
+  <thead>
+    <tr>
+      <th>A/c Number</th>
+      <th>Name</th>
+      <th>Status</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of rcvdInputDataOfCreateAccount; let i = index">
+      <td>
+        005698{{i+1}}
+      </td>
+      <td>{{item.accountName}}</td>
+      <td><span class="label" [ngClass]="accountStatus(item.accountType)">{{item.accountType}}</span>
+      </td>
+      <td><a href="" class="text-danger">Edit</a></td>
+    </tr>
+  </tbody>

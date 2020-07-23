@@ -13,6 +13,6 @@
 export interface IRecipe {
     name: string;
     description: string;
-    amount?:number;
-    imagePath?: string
+    amount?: number;
+    imagePath?: string;
 }

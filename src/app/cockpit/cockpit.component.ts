@@ -9,11 +9,11 @@ import { Component, OnInit, Output, EventEmitter, ViewEncapsulation, ViewChild, 
 })
 export class CockpitComponent implements OnInit {
   serverElement = [];
-  serverName = "";
-  serverContent = ""
-  itemName = "";
+  serverName = '';
+  serverContent = '';
+  itemName = '';
   totalCount: number;
-  childName = "Welcome!"
+  childName = 'Welcome!';
   @Output() serverCreated = new EventEmitter<{ serverName: string, serverContent: string }>();
   @Output() bluePrintCreated = new EventEmitter<{ serverName: string, serverContent: string }>();
   @Output() getAlertBoxFromChild = new EventEmitter<{ total: number, itemName: string }>();
@@ -33,17 +33,17 @@ export class CockpitComponent implements OnInit {
   getAlert() {
     this.getAlertBoxFromChild.emit({ itemName: this.itemName.toLocaleLowerCase(), total: this.totalCount });
     this.totalCount = null;
-    this.itemName = "";
+    this.itemName = '';
 
   }
   resetControls() {
-    this.serverName = "";
-    this.serverContent = "";
+    this.serverName = '';
+    this.serverContent = '';
   }
   localRefrenceControls(event) {
-    console.log("Local refernce data", event);
+    console.log('Local refernce data', event);
   }
   fnViewChild() {
-    console.log("View child data", this.viewChildName.nativeElement.value);
+    console.log('View child data', this.viewChildName.nativeElement.value);
   }
 }

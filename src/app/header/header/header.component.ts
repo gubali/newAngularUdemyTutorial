@@ -9,7 +9,7 @@ export class HeaderComponent implements OnInit {
   collapsed = true;
   @Input() activeNavigationTab: string;
   @Output() selectedFeatureName = new EventEmitter<string>();
-  public toggleDropdownFlag: boolean = false;
+  public toggleDropdownFlag = false;
   constructor() { }
 
   ngOnInit() {
@@ -18,7 +18,7 @@ export class HeaderComponent implements OnInit {
     this.selectedFeatureName.emit(featureName);
   }
   toggleClass() {
-   this.toggleDropdownFlag = !this.toggleDropdownFlag
+   this.toggleDropdownFlag = !this.toggleDropdownFlag;
 
   }
 }

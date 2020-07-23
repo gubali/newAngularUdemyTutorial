@@ -4,11 +4,11 @@ import { Directive, Renderer2, OnInit, ElementRef, HostListener, HostBinding, In
   selector: '[appBetterHighlight]'
 })
 export class BetterHighlightDirective implements OnInit {
-@Input() defaultTextColor: string = "";
-@Input() defualtBgColor:string;
-@HostBinding('style.color') textColor:string = this.defaultTextColor;
-@HostBinding('attr.role') role:string = "asif";
-@HostBinding('style.backgroundColor') bgColor:string = this.defualtBgColor;
+@Input() defaultTextColor = '';
+@Input() defualtBgColor: string;
+@HostBinding('style.color') textColor: string = this.defaultTextColor;
+@HostBinding('attr.role') role = 'asif';
+@HostBinding('style.backgroundColor') bgColor: string = this.defualtBgColor;
   constructor(private renderer: Renderer2, private elemRef: ElementRef) { }
   ngOnInit() {
     this.renderer.addClass(this.elemRef.nativeElement, 'text-color');
@@ -16,14 +16,14 @@ export class BetterHighlightDirective implements OnInit {
     this.bgColor = this.defualtBgColor;
   }
   @HostListener('mouseenter') mouseenter(eventData: Event) {
-    this.renderer.setStyle(this.elemRef.nativeElement, 'background-color', "#fff");
+    this.renderer.setStyle(this.elemRef.nativeElement, 'background-color', '#fff');
     console.log(eventData);
-    
+
     this.textColor = this.defaultTextColor;
 
   }
   @HostListener('mouseleave') mouseleave(eventData: Event) {
-    this.renderer.setStyle(this.elemRef.nativeElement, 'background-color', "yellow")
+    this.renderer.setStyle(this.elemRef.nativeElement, 'background-color', 'yellow');
   }
 }
 

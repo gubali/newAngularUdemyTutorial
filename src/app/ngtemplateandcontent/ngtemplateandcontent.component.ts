@@ -6,14 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ngtemplateandcontent.component.css']
 })
 export class NgtemplateandcontentComponent implements OnInit {
-  public isOn: boolean = true;
+  public isOn = true;
 
   country: Array<{ id: number, name: string }> = [
-    { id: 1, name: "india" },
-    { id: 2, name: "pakistan" },
-    { id: 3, name: "afganistan" },
-    { id: 4, name: "Sril lanka" }
-  ]
+    { id: 1, name: 'india' },
+    { id: 2, name: 'pakistan' },
+    { id: 3, name: 'afganistan' },
+    { id: 4, name: 'Sril lanka' }
+  ];
   constructor() { }
 
   ngOnInit() {

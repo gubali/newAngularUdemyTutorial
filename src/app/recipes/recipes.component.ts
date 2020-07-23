@@ -7,14 +7,14 @@ import { IRecipe } from './recipe.model';
   styleUrls: ['./recipes.component.css']
 })
 export class RecipesComponent implements OnInit {
-  public selectedRecipi;
+  public selectedRecipe: IRecipe;
   constructor() { }
 
   ngOnInit() {
-    
+
   }
-  rcvdSelectedRecipi(elem) {
-    debugger;
-    this.selectedRecipi.push(elem);
-  }
+  // rcvdSelectedRecipi(elem) {
+  //   debugger;
+  //   this.selectedRecipi.push(elem);
+  // }
 }

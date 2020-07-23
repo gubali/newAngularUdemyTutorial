@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { ServerComponent } from './server/server.component';
-import { StudentsComponent } from "./studentDetails/students.component";
+import { StudentsComponent } from './studentDetails/students.component';
 import { HoverColorDirective } from './commonDirective/hover-color.directive';
 import {FormsModule} from '@angular/forms';
 import { HeaderComponent } from './header/header/header.component';
@@ -25,6 +25,13 @@ import { BasicHighlightDiretcive } from './custom-directive/basic-highlight-dire
 import { BetterHighlightDirective } from './custom-directive/better-highlight.directive';
 import { CustomStructureDirectiveDirective } from './custom-directive/custom-structure-directive.directive';
 import { DropdownDirective } from './shared/dropdown.directive';
+import { AccountComponent } from './account/account.component';
+import { NewAccountComponent } from './new-account/new-account.component';
+import { CommonDataServices } from "../../src/app/shared/services/common.dataservice";
+import { LoggingServices } from './shared/services/logging.service';
+import { UserStatusDashboardComponent } from './user-status-dashboard/user-status-dashboard.component';
+import { ActiveUserComponent } from './user-status-dashboard/active-user/active-user.component';
+import { InactiveUserComponent } from './user-status-dashboard/inactive-user/inactive-user.component';
 
 
 @NgModule({
@@ -52,13 +59,18 @@ import { DropdownDirective } from './shared/dropdown.directive';
     BasicHighlightDiretcive,
     BetterHighlightDirective,
     CustomStructureDirectiveDirective,
-    DropdownDirective
+    DropdownDirective,
+    AccountComponent,
+    NewAccountComponent,
+    UserStatusDashboardComponent,
+    ActiveUserComponent,
+    InactiveUserComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [CommonDataServices, LoggingServices],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -6,6 +6,24 @@
     <app-shopping-list *ngIf="headerNavigationName !== 'recipes'"></app-shopping-list>
   </div>
   <br />
+  <div class="common-border-style">
+    <app-user-status-dashboard></app-user-status-dashboard>
+  </div>
+
+  <div class="common-border-style">
+    <h4 class="text-success text-center"> Section 9: Using Services & Dependency Injection</h4>
+    <em> app-new-account: Create new Account</em>
+    <div class="row">
+      <div class="col-md-6">
+        <app-new-account (createAccountEmitter)="creatAccount($event)"></app-new-account>
+      </div>
+      <div class="col-md-6">
+        <app-account [rcvdInputDataOfCreateAccount]="accountData"></app-account>
+      </div>
+    </div>
+
+  </div>
+  <br />
   <div class="row">
     <div class="col-md-12">
       <div class="text-danger">{{title}}</div>

@@ -7,8 +7,8 @@ import { Component, OnInit, Input, SimpleChanges, ContentChild, ElementRef, Afte
 })
 export class ServerElementComponent implements OnInit {
   @Input('srvElement') element: { type: string, name: string, content: string };
-  @ContentChild('contentParagraph', {static: false}) paragraphElement:ElementRef;
-  
+  @ContentChild('contentParagraph', {static: false}) paragraphElement: ElementRef;
+
   constructor() { }
 
   ngOnInit() {

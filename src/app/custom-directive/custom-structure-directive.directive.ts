@@ -7,7 +7,7 @@ export class CustomStructureDirectiveDirective {
 
   @Input() set appCustomStructureDirective(condition: boolean) {
     if (!condition) {
-      this.vcRef.createEmbeddedView(this.tempRef)
+      this.vcRef.createEmbeddedView(this.tempRef);
     } else {
       this.vcRef.clear();
     }

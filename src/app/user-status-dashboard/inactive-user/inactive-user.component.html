@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="col-md-12"><strong>Inactive User</strong></div>
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <p *ngFor="let item of inputInactiveUsers; let i=index">
+            <strong>
+              {{item}} |
+            </strong>
+            <a href="javascript:void(0)"> Set to inactive</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>

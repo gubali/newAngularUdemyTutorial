@@ -135,6 +135,21 @@ HostListener('click') myClick(){ } is exactly the same as (click)="myClick()"
 
 @HostBinding: This decorator binds a class property to a property of the host element.
 @HostListener: This decorator binds a class method to an event of the host element.
+
+Section 9: Using Services & Dependency Injection :)
+
+Services:  centerlized common function.
+
+Note:: if you added service into service make sure it should @Injectable should addded in service where you eant to use other service.
+@injectable: this service is injectable or something can be injectable.
+@Injector is a decorator, when it is added to a service, this makes the service to be injected into the modules wherein it is needed as a 
+dependency.
+
+
+
+
+
+
  
  
  

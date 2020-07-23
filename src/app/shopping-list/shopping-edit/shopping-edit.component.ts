@@ -8,16 +8,16 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class ShoppingEditComponent implements OnInit {
   itemDescription: string;
   itemName: string;
-  itemAmount:number
-  @Output() createRecipiItems = new EventEmitter<{ name: string, description:string, amount: number }>();
+  itemAmount: number;
+  @Output() createRecipiItems = new EventEmitter<{ name: string, description: string, amount: number }>();
   constructor() { }
 
   ngOnInit() {
   }
   getShoppingEditRecipiData() {
-    this.createRecipiItems.emit({ name: this.itemName, description:this.itemDescription, amount: this.itemAmount });
-    this.itemName = "";
-    this.itemDescription = "";
+    this.createRecipiItems.emit({ name: this.itemName, description: this.itemDescription, amount: this.itemAmount });
+    this.itemName = '';
+    this.itemDescription = '';
     this.itemAmount = null;
   }
 }

@@ -16,10 +16,10 @@ export class GamecontrolComponent implements OnInit {
   onStart() {
     this.timer = setInterval(() => {
       this.newNumber.emit(this.count + 1);
-      this.count++
-    }, 1000)
+      this.count++;
+    }, 1000);
   }
   onStop() {
-    clearInterval(this.timer)
+    clearInterval(this.timer);
   }
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, AfterViewInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { IRecipe } from '../../recipe.model';
 
 @Component({
   selector: 'app-recipes-item',
@@ -6,7 +7,7 @@ import { Component, OnInit, Input, AfterViewInit, Output, EventEmitter } from '@
   styleUrls: ['./recipes-item.component.css']
 })
 export class RecipesItemComponent implements OnInit {
-  @Input() addedRecipeItems: { name: string, description: string };
+  @Input() addedRecipeItems: IRecipe;
   @Output() emitSelectedRecipiItems = new EventEmitter<void>();
   constructor() { }
 
