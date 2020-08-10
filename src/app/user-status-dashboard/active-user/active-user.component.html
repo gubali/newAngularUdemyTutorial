@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-md-12"><strong>Active User</strong></div>
   <div class="col-md-12">
-    <div class="panel panel-default">
+    <div class="panel panel-default" *ngIf="inputActiveUsers.length > 0; else name ">
       <div class="panel-body">
         <p *ngFor="let item of inputActiveUsers; let i=index;">
           <strong>
@@ -11,5 +11,9 @@
         </p>
       </div>
     </div>
+    <ng-template #name>
+      <em>Record's not found!</em>
+    </ng-template>
+    
   </div>
 </div>

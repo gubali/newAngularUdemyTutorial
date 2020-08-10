@@ -4,6 +4,6 @@
         <app-active-user [inputActiveUsers]="activeUsers" (getActiveUserId)="recvdActiveUsrId($event)"></app-active-user>
     </div>
     <div class="col-md-6">
-        <app-inactive-user [inputInactiveUsers]="inactiveUsers"></app-inactive-user>
+        <app-inactive-user [inputInactiveUsers]="inactiveUsers" (getInactiveUserId)="rcvdInActiveUserId($event)"></app-inactive-user>
     </div>
 </div>

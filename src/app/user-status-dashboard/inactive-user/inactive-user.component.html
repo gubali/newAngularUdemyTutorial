@@ -1,15 +1,18 @@
 <div class="row">
     <div class="col-md-12"><strong>Inactive User</strong></div>
     <div class="col-md-12">
-      <div class="panel panel-default">
+      <div class="panel panel-default" *ngIf="inputInactiveUsers.length > 0; else name ">
         <div class="panel-body">
           <p *ngFor="let item of inputInactiveUsers; let i=index">
             <strong>
               {{item}} |
             </strong>
-            <a href="javascript:void(0)"> Set to inactive</a>
+            <a href="javascript:void(0)" (click)="isStatusInactive(i)"> Set to inactive</a>
           </p>
         </div>
       </div>
+      <ng-template #name>
+        <em>Record's not found!</em>
+      </ng-template>
     </div>
   </div>

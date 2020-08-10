@@ -32,6 +32,8 @@ import { LoggingServices } from './shared/services/logging.service';
 import { UserStatusDashboardComponent } from './user-status-dashboard/user-status-dashboard.component';
 import { ActiveUserComponent } from './user-status-dashboard/active-user/active-user.component';
 import { InactiveUserComponent } from './user-status-dashboard/inactive-user/inactive-user.component';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { AnimationViewComponent } from './animation-view/animation-view.component';
 
 
 @NgModule({
@@ -65,10 +67,12 @@ import { InactiveUserComponent } from './user-status-dashboard/inactive-user/ina
     UserStatusDashboardComponent,
     ActiveUserComponent,
     InactiveUserComponent,
+    AnimationViewComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [CommonDataServices, LoggingServices],
   bootstrap: [AppComponent]
