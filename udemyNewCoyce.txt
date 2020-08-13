@@ -146,6 +146,16 @@ Note:: if you added service into service make sure it should @Injectable should 
 dependency.
 
 
+==============Section 10: Course Project - Services & Dependency Injection==========================
+
+constructer(private srcitems:service_name){}
+
+=================Section 11 Routing===========================================
+
+
+
+
+
 
 
 
