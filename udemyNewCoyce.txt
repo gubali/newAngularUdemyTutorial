@@ -151,9 +151,22 @@ dependency.
 constructer(private srcitems:service_name){}
 
 =================Section 11 Routing===========================================
+conts appRoutes:Routes = [
+{path:"", component: ""}
+]
+imports:[
+RouterModule.forRoot(appRoutes) // allow to register route for our main application.
+
+]
+
+//Git Command
+
+To know origin name: git push -u origin master
 
 
-
+==================================Angular ngrx=====================================
+cretae multi project:  ng generate application proj_name
+Run: ng serve --project=reduxExample --port 9000 -o
 
 
 

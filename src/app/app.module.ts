@@ -4,7 +4,7 @@ import { AppComponent } from './app.component';
 import { ServerComponent } from './server/server.component';
 import { StudentsComponent } from './studentDetails/students.component';
 import { HoverColorDirective } from './commonDirective/hover-color.directive';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header/header.component';
 import { RecipesComponent } from './recipes/recipes.component';
 import { RecipesListComponent } from './recipes/recipes-list/recipes-list.component';
@@ -34,7 +34,15 @@ import { ActiveUserComponent } from './user-status-dashboard/active-user/active-
 import { InactiveUserComponent } from './user-status-dashboard/inactive-user/inactive-user.component';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AnimationViewComponent } from './animation-view/animation-view.component';
-
+import { Routes, RouterModule } from '@angular/router';
+import { UsersComponent } from './users/users.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+debugger; 
+const appRoute: Routes = [
+ // { path: '', component: LandingPageComponent },
+  { path: 'users', component: UsersComponent },
+  //{ path: 'app', component: AppComponent }
+]
 
 @NgModule({
   declarations: [
@@ -68,11 +76,14 @@ import { AnimationViewComponent } from './animation-view/animation-view.componen
     ActiveUserComponent,
     InactiveUserComponent,
     AnimationViewComponent,
+    UsersComponent,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    RouterModule.forRoot(appRoute)
   ],
   providers: [CommonDataServices, LoggingServices],
   bootstrap: [AppComponent]
